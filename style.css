@@ -1,0 +1,124 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+/* font-family: 'Lexend Deca', sans-serif; */
+
+body {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(233, 47%, 7%);
+    color: white;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Card Grid Mobile responsive*/
+.card {
+    background-color: hsl(244, 38%, 16%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh 100vh;
+    grid-template-areas: "image_area"
+        "body_area";
+    margin: 15vh 5vw;
+    border-radius: 10px;
+}
+
+/* Card Body */
+.card_body {
+    grid-area: body_area;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: -5vh 10vw;
+}
+
+.title span {
+    color: hsl(277, 64%, 61%);
+}
+
+.note {
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.5;
+}
+
+.title,
+.note,
+.item_list {
+    text-align: center;
+}
+
+.note {
+    margin: -8vh 5vw;
+}
+
+.item_list p {
+    text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif;
+    color: hsla(0, 0%, 100%, 0.6)
+}
+
+/* Card Image */
+.card_image {
+    grid-area: image_area;
+    background-image: linear-gradient(180deg, rgba(170, 92, 219, 0.5), rgba(170, 92, 219, 0.5)), url(images/image-header-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Desktop responsive */
+@media screen and (min-width: 900px) {
+    .card {
+        margin: 15vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "body_area image_area";
+    }
+
+    /* Card Body */
+    .card_body {
+        grid-area: body_area;
+        margin: 0;
+    }
+
+    .title,
+    .note,
+    .item_list {
+        text-align: left;
+    }
+
+    .title {
+        margin: 10vh 10vw 6vh 5vw;
+    }
+
+    .note {
+        margin: -7vh 10vw 10vh 5vw;
+    }
+
+    .item_list {
+        /* padding: 0 8em 4em 4.7em; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3vw;
+        margin: 0 10vw 5vh 5vw;
+
+    }
+
+    /* Card Image */
+    .card_image {
+        grid-area: image_area;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+
+}
